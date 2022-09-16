@@ -22,7 +22,8 @@
                             <img src="../img/60fea6773d624000048712b5.png" alt="">
                         </li>
                         <li>
-                            <img src="../img/logo-instagram-png-sem-fundo16.png" style="filter: invert(100%); width: 30px;">
+                            <img src="../img/logo-instagram-png-sem-fundo16.png"
+                                style="filter: invert(100%); width: 30px;">
                         </li>
                     </ul>
                 </div>
@@ -38,12 +39,10 @@
 <style>
 .rodapeforget {
     background-color: #0a0a12;
-    padding: 0 20px;
     bottom: 0;
     position: fixed;
     width: 100%;
 }
-
 
 .rodape {
     justify-content: space-between;
@@ -106,10 +105,12 @@ ul {
     list-style-type: none;
     display: flex;
 }
-.rigth{
+
+.rigth {
     color: #fff;
 }
-.agencycontact span{
+
+.agencycontact span {
     text-decoration: none;
     color: rgb(185, 185, 185);
 }

@@ -12,5 +12,8 @@ import FooterComp from "./components/footerComp.vue";
 </template>
 
 <style>
-
+.FooterComp {
+  bottom: 0;
+  position: fixed;
+}
 </style>
