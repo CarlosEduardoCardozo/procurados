@@ -39,69 +39,6 @@ export default {
     </div>
     <div class="card">
       <card-procurado v-for="procurado of data" :key="procurado.uid" :procurado="procurado"  />
-      <!-- <div class="onecard">
-        <img src="../img/preview.jpeg">
-        <div class="name">
-          <h4>Causa</h4>
-          <p>name</p>
-        </div>
-      </div>  
-      <div class="onecard">
-        <img src="../img/preview.jpeg">
-        <div class="name">
-          <h4>Causa</h4>
-          <p>name</p>
-        </div>
-      </div>  
-      <div class="onecard">
-        <img src="../img/preview.jpeg">
-        <div class="name">
-          <h4>Causa</h4>
-          <p>name</p>
-        </div>
-      </div>  
-      <div class="onecard">
-        <img src="../img/preview.jpeg">
-        <div class="name">
-          <h4>Causa</h4>
-          <p>name</p>
-        </div>
-      </div>  
-      <div class="onecard">
-        <img src="../img/preview.jpeg">
-        <div class="name">
-          <h4>Causa</h4>
-          <p>name</p>
-        </div>
-      </div>  
-      <div class="onecard">
-        <img src="../img/preview.jpeg">
-        <div class="name">
-          <h4>Causa</h4>
-          <p>name</p>
-        </div>
-      </div>  
-      <div class="onecard">
-        <img src="../img/preview.jpeg">
-        <div class="name">
-          <h4>Causa</h4>
-          <p>name</p>
-        </div>
-      </div>  
-      <div class="onecard">
-        <img src="../img/preview.jpeg">
-        <div class="name">
-          <h4>Causa</h4>
-          <p>name</p>
-        </div>
-      </div>  
-      <div class="onecard">
-        <img src="../img/preview.jpeg">
-        <div class="name">
-          <h4>Causa</h4>
-          <p>name</p>
-        </div>
-      </div> -->
 
     </div>
   </div>
@@ -116,23 +53,24 @@ export default {
 
 .name {
   font-family: Arial, Helvetica, sans-serif;
-  width: 10%;
-  margin-top: 10%;
-  margin-left: 30%;
+  margin-top: 15%;
+  width: 150px;
 }
 
 .onecard {
+  font-size: 15px;
   border: solid 2px #0a0a12;
   border-radius: 15px;
   width: 140px;
-  height: 240px;
+  height: 340px;
   padding: 15px;
   margin: 2%;
-  box-shadow: 0px 10px 20px 0 rgba(1, 14, 49, 0.568);
+  box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.438);
 }
 
 .onecard img {
   display: flex;
+  width: 22px;
   border-radius: 15px;
   width: 100%;
 }

@@ -1,6 +1,32 @@
+<script>
+    import axios from "axios";
+    import { onBeforeMount } from "vue";
+    // import { onBeforeMount, reactive } from "vue";
+    
+    import cardSepardoProc from '../components/cardSepardoProc.vue'
+    
+    export default {
+      components: { cardSepardoProc }, 
+      data() {
+        return {
+          data: []
+        }
+      },
+      async created() {
+        const {data} = await axios.get('https://api.fbi.gov/wanted/v1/list')
+        console.log(data)
+        this.data = data.items
+        console.log(this.data)
+    
+      }
+    }
+
+</script>
 <template>
+    <cardSepardoProc v-for="procurado of data" :key="procurado.uid" :procurado="procurado"  />
     <div class="main">
         <div class="lista">
+            
             <h2 class="txtprin">Mais Procurados</h2>
             <hr>
             <div class="categorias">
