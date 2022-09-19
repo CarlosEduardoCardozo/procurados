@@ -40,7 +40,6 @@
 .rodapeforget {
     background-color: #0a0a12;
     bottom: 0;
-    position: fixed;
     width: 100%;
 }
 

@@ -16,6 +16,7 @@
   font-size: 1.8rem;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  margin-bottom: 20%;
 }
 
 .bemvindo button {

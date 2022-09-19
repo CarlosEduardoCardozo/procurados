@@ -1,14 +1,28 @@
-<script setup>
+<script>
 import axios from "axios";
-import { onMounted } from "vue";
+import { onBeforeMount } from "vue";
+// import { onBeforeMount, reactive } from "vue";
 
-let data = []
-onMounted(() => {
-  axios.get('https://api.fbi.gov/wanted/v1/list').then(res => {
-    data = res.data.items
+import CardProcurado from '../components/CardProcurado.vue'
+
+export default {
+  components: { CardProcurado }, 
+  data() {
+    return {
+      data: []
+    }
+  },
+  async created() {
+    const {data} = await axios.get('https://api.fbi.gov/wanted/v1/list')
     console.log(data)
-  })
-})
+    this.data = data.items
+    console.log(this.data)
+
+  }
+}
+// let data = reactive([])
+// onBeforeMount(() => {
+// })
 </script>
 <template>
   <div class="main">
@@ -24,44 +38,80 @@ onMounted(() => {
       </div>
     </div>
     <div class="card">
+      <card-procurado v-for="procurado of data" :key="procurado.uid" :procurado="procurado"  />
+      <!-- <div class="onecard">
+        <img src="../img/preview.jpeg">
+        <div class="name">
+          <h4>Causa</h4>
+          <p>name</p>
+        </div>
+      </div>  
       <div class="onecard">
         <img src="../img/preview.jpeg">
         <div class="name">
           <h4>Causa</h4>
           <p>name</p>
         </div>
-      </div>
+      </div>  
       <div class="onecard">
         <img src="../img/preview.jpeg">
         <div class="name">
           <h4>Causa</h4>
           <p>name</p>
         </div>
-      </div>
+      </div>  
       <div class="onecard">
         <img src="../img/preview.jpeg">
         <div class="name">
           <h4>Causa</h4>
           <p>name</p>
         </div>
-      </div>
+      </div>  
       <div class="onecard">
         <img src="../img/preview.jpeg">
         <div class="name">
           <h4>Causa</h4>
           <p>name</p>
         </div>
-      </div>
-      
-      
+      </div>  
+      <div class="onecard">
+        <img src="../img/preview.jpeg">
+        <div class="name">
+          <h4>Causa</h4>
+          <p>name</p>
+        </div>
+      </div>  
+      <div class="onecard">
+        <img src="../img/preview.jpeg">
+        <div class="name">
+          <h4>Causa</h4>
+          <p>name</p>
+        </div>
+      </div>  
+      <div class="onecard">
+        <img src="../img/preview.jpeg">
+        <div class="name">
+          <h4>Causa</h4>
+          <p>name</p>
+        </div>
+      </div>  
+      <div class="onecard">
+        <img src="../img/preview.jpeg">
+        <div class="name">
+          <h4>Causa</h4>
+          <p>name</p>
+        </div>
+      </div> -->
+
     </div>
   </div>
 </template>
 <style>
 .card {
   padding: 6%;
-  margin-left: 15%;
+  margin-left: 10%;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .name {
@@ -72,15 +122,18 @@ onMounted(() => {
 }
 
 .onecard {
-  border: solid 2px #000;
+  border: solid 2px #0a0a12;
   border-radius: 15px;
   width: 140px;
   height: 240px;
   padding: 15px;
   margin: 2%;
+  box-shadow: 0px 10px 20px 0 rgba(1, 14, 49, 0.568);
 }
 
 .onecard img {
+  display: flex;
+  border-radius: 15px;
   width: 100%;
 }
 
